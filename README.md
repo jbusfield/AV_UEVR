@@ -1,2 +1,2 @@
 # AV_UEVR
-A VR first person mode for Avowed using UEVR
+A VR first person mod for Avowed using UEVR

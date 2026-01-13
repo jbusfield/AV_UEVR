@@ -1,0 +1,292 @@
+{
+    "character_hidden": {
+        "autoAdjustUIWhenInGameState": 1,
+        "autoAdjustUIWhenInGameStatePriority": "0",
+        "decouplePitchWhenInGameState": 1,
+        "decouplePitchWhenInGameStatePriority": "0",
+        "handsWhenInGameState": 1,
+        "handsWhenInGameStatePriority": "0",
+        "inputWhenInGameState": 3,
+        "inputWhenInGameStatePriority": "0",
+        "lockedUIWhenInGameState": 1,
+        "lockedUIWhenInGameStatePriority": "0",
+        "remapWhenInGameState": 1,
+        "remapWhenInGameStatePriority": "0",
+        "screen2DWhenInGameState": 1,
+        "screen2DWhenInGameStatePriority": "0"
+    },
+    "cutscene": {
+        "autoAdjustUIWhenInGameState": 1,
+        "autoAdjustUIWhenInGameStatePriority": "0",
+        "decouplePitchWhenInGameState": 1,
+        "decouplePitchWhenInGameStatePriority": "0",
+        "handsWhenInGameState": 3,
+        "handsWhenInGameStatePriority": "1",
+        "inputWhenInGameState": 3,
+        "inputWhenInGameStatePriority": "0",
+        "lockedUIWhenInGameState": 2,
+        "lockedUIWhenInGameStatePriority": "0",
+        "remapWhenInGameState": 1,
+        "remapWhenInGameStatePriority": "0",
+        "screen2DWhenInGameState": 1,
+        "screen2DWhenInGameStatePriority": "0"
+    },
+    "paused": {
+        "autoAdjustUIWhenInGameState": 1,
+        "autoAdjustUIWhenInGameStatePriority": "0",
+        "decouplePitchWhenInGameState": 1,
+        "decouplePitchWhenInGameStatePriority": "0",
+        "handsWhenInGameState": 1,
+        "handsWhenInGameStatePriority": "0",
+        "inputWhenInGameState": 1,
+        "inputWhenInGameStatePriority": "0",
+        "lockedUIWhenInGameState": 2,
+        "lockedUIWhenInGameStatePriority": "0",
+        "remapWhenInGameState": 1,
+        "remapWhenInGameStatePriority": "0",
+        "screen2DWhenInGameState": 1,
+        "screen2DWhenInGameStatePriority": "0"
+    },
+    "widgetlist": {
+        "WidgetBlueprintGeneratedClass /Game/UI/Screens/AbilityRadial/SBP_AbilityRadial.SBP_AbilityRadial_C": {
+            "label": "SBP_AbilityRadial_C"
+        },
+        "WidgetBlueprintGeneratedClass /Game/UI/Screens/Common/WBP_ExaminableView.WBP_ExaminableView_C": {
+            "alignment": [
+                0.0,
+                0.0
+            ],
+            "autoAdjustUIWhenActive": 1,
+            "autoAdjustUIWhenActivePriority": "0",
+            "decouplePitchWhenActive": 1,
+            "decouplePitchWhenActivePriority": "0",
+            "handsWhenActive": 1,
+            "handsWhenActivePriority": "0",
+            "inputWhenActive": 1,
+            "inputWhenActivePriority": "0",
+            "label": "WBP_ExaminableView_C",
+            "lockedUIWhenActive": 2,
+            "lockedUIWhenActivePriority": "0",
+            "remapWhenActive": 1,
+            "remapWhenActivePriority": "0",
+            "scale": [
+                1.0,
+                1.0
+            ],
+            "screen2DWhenActive": 1,
+            "screen2DWhenActivePriority": "0"
+        },
+        "WidgetBlueprintGeneratedClass /Game/UI/Screens/Conversation/SBP_ConversationScreen.SBP_ConversationScreen_C": {
+            "label": "SBP_ConversationScreen_C"
+        },
+        "WidgetBlueprintGeneratedClass /Game/UI/Screens/Conversation/SBP_ConversationVideoScreen.SBP_ConversationVideoScreen_C": {
+            "alignment": [
+                0.0,
+                0.0
+            ],
+            "autoAdjustUIWhenActive": 1,
+            "autoAdjustUIWhenActivePriority": "0",
+            "decouplePitchWhenActive": 1,
+            "decouplePitchWhenActivePriority": "0",
+            "handsWhenActive": 1,
+            "handsWhenActivePriority": "0",
+            "inputWhenActive": 1,
+            "inputWhenActivePriority": "0",
+            "label": "SBP_ConversationVideoScreen_C",
+            "lockedUIWhenActive": 2,
+            "lockedUIWhenActivePriority": "0",
+            "remapWhenActive": 1,
+            "remapWhenActivePriority": "0",
+            "scale": [
+                1.0,
+                1.0
+            ],
+            "screen2DWhenActive": 2,
+            "screen2DWhenActivePriority": "0"
+        },
+        "WidgetBlueprintGeneratedClass /Game/UI/Screens/CraftingV2/SBP_AmountSelectorDialogV2.SBP_AmountSelectorDialogV2_C": {
+            "label": "SBP_AmountSelectorDialogV2_C"
+        },
+        "WidgetBlueprintGeneratedClass /Game/UI/Screens/CraftingV2/SBP_CraftingScreenSurroundV2.SBP_CraftingScreenSurroundV2_C": {
+            "label": "SBP_CraftingScreenSurroundV2_C"
+        },
+        "WidgetBlueprintGeneratedClass /Game/UI/Screens/Dialogs/SBP_BasicDialog.SBP_BasicDialog_C": {
+            "label": "SBP_BasicDialog_C"
+        },
+        "WidgetBlueprintGeneratedClass /Game/UI/Screens/Dialogs/SBP_CompanionRecruitedDialog.SBP_CompanionRecruitedDialog_C": {
+            "label": "SBP_CompanionRecruitedDialog_C"
+        },
+        "WidgetBlueprintGeneratedClass /Game/UI/Screens/Dialogs/SBP_ComposableDialog.SBP_ComposableDialog_C": {
+            "label": "SBP_ComposableDialog_C"
+        },
+        "WidgetBlueprintGeneratedClass /Game/UI/Screens/Dialogs/SBP_DialogScrollingChoicesWithButtonsWithPause.SBP_DialogScrollingChoicesWithButtonsWithPause_C": {
+            "label": "SBP_DialogScrollingChoicesWithButtonsWithPause_C"
+        },
+        "WidgetBlueprintGeneratedClass /Game/UI/Screens/Dialogs/SBP_FirstAbilityDialog.SBP_FirstAbilityDialog_C": {
+            "label": "SBP_FirstAbilityDialog_C"
+        },
+        "WidgetBlueprintGeneratedClass /Game/UI/Screens/Dialogs/SBP_GammaSliderDialog.SBP_GammaSliderDialog_C": {
+            "label": "SBP_GammaSliderDialog_C"
+        },
+        "WidgetBlueprintGeneratedClass /Game/UI/Screens/Dialogs/SBP_GodlikeTraitUnlockedDialog.SBP_GodlikeTraitUnlockedDialog_C": {
+            "label": "SBP_GodlikeTraitUnlockedDialog_C"
+        },
+        "WidgetBlueprintGeneratedClass /Game/UI/Screens/Dialogs/SBP_LeavePartyCampDialog.SBP_LeavePartyCampDialog_C": {
+            "label": "SBP_LeavePartyCampDialog_C"
+        },
+        "WidgetBlueprintGeneratedClass /Game/UI/Screens/Dialogs/SBP_PlayerDeathDialog.SBP_PlayerDeathDialog_C": {
+            "alignment": [
+                0.0,
+                0.0
+            ],
+            "autoAdjustUIWhenActive": 1,
+            "autoAdjustUIWhenActivePriority": "0",
+            "decouplePitchWhenActive": 1,
+            "decouplePitchWhenActivePriority": "0",
+            "handsWhenActive": 1,
+            "handsWhenActivePriority": "0",
+            "inputWhenActive": 1,
+            "inputWhenActivePriority": "0",
+            "label": "SBP_PlayerDeathDialog_C",
+            "lockedUIWhenActive": 2,
+            "lockedUIWhenActivePriority": "0",
+            "remapWhenActive": 1,
+            "remapWhenActivePriority": "0",
+            "scale": [
+                1.0,
+                1.0
+            ],
+            "screen2DWhenActive": 1,
+            "screen2DWhenActivePriority": "0"
+        },
+        "WidgetBlueprintGeneratedClass /Game/UI/Screens/Dialogs/SBP_UpgradeAbilityDialog.SBP_UpgradeAbilityDialog_C": {
+            "label": "SBP_UpgradeAbilityDialog_C"
+        },
+        "WidgetBlueprintGeneratedClass /Game/UI/Screens/Dialogs/WBP_DialogScrollingChoicesIcon_Horizontal.WBP_DialogScrollingChoicesIcon_Horizontal_C": {
+            "label": "WBP_DialogScrollingChoicesIcon_Horizontal_C"
+        },
+        "WidgetBlueprintGeneratedClass /Game/UI/Screens/Dialogs/WBP_SettingsResolutionCountDown.WBP_SettingsResolutionCountDown_C": {
+            "label": "WBP_SettingsResolutionCountDown_C"
+        },
+        "WidgetBlueprintGeneratedClass /Game/UI/Screens/Ledger/SBP_LedgerSurround.SBP_LedgerSurround_C": {
+            "label": "SBP_LedgerSurround_C"
+        },
+        "WidgetBlueprintGeneratedClass /Game/UI/Screens/Ledger/WBP_InteractMiniLedgerScreen.WBP_InteractMiniLedgerScreen_C": {
+            "label": "WBP_InteractMiniLedgerScreen_C"
+        },
+        "WidgetBlueprintGeneratedClass /Game/UI/Screens/Legals/SBP_LegalScreen.SBP_LegalScreen_C": {
+            "label": "SBP_LegalScreen_C"
+        },
+        "WidgetBlueprintGeneratedClass /Game/UI/Screens/MainMenu/SBP_MainMenu.SBP_MainMenu_C": {
+            "alignment": [
+                0.0,
+                0.0
+            ],
+            "autoAdjustUIWhenActive": 1,
+            "autoAdjustUIWhenActivePriority": "0",
+            "decouplePitchWhenActive": 1,
+            "decouplePitchWhenActivePriority": "0",
+            "handsWhenActive": 1,
+            "handsWhenActivePriority": "0",
+            "inputWhenActive": 1,
+            "inputWhenActivePriority": "0",
+            "label": "SBP_MainMenu_C",
+            "lockedUIWhenActive": 2,
+            "lockedUIWhenActivePriority": "0",
+            "remapWhenActive": 1,
+            "remapWhenActivePriority": "0",
+            "scale": [
+                1.0,
+                1.0
+            ],
+            "screen2DWhenActive": 1,
+            "screen2DWhenActivePriority": "0"
+        },
+        "WidgetBlueprintGeneratedClass /Game/UI/Screens/ModifyEquipment/WBP_EnchantEquipmentScreen.WBP_EnchantEquipmentScreen_C": {
+            "label": "WBP_EnchantEquipmentScreen_C"
+        },
+        "WidgetBlueprintGeneratedClass /Game/UI/Screens/ModifyEquipment/WBP_ModifyEquipmentScreen.WBP_ModifyEquipmentScreen_C": {
+            "label": "WBP_ModifyEquipmentScreen_C"
+        },
+        "WidgetBlueprintGeneratedClass /Game/UI/Screens/Overlay/BPW_Window_Overlay.BPW_Window_Overlay_C": {
+            "label": "BPW_Window_Overlay_C"
+        },
+        "WidgetBlueprintGeneratedClass /Game/UI/Screens/Overlay/SBP_SystemOverlay.SBP_SystemOverlay_C": {
+            "label": "SBP_SystemOverlay_C"
+        },
+        "WidgetBlueprintGeneratedClass /Game/UI/Screens/PlayerHUD/Interaction/WBP_InteractPrompt_Generic.WBP_InteractPrompt_Generic_C": {
+            "label": "WBP_InteractPrompt_Generic_C"
+        },
+        "WidgetBlueprintGeneratedClass /Game/UI/Screens/PlayerHUD/WBP_Crosshair.WBP_Crosshair_C": {
+            "label": "WBP_Crosshair_C"
+        },
+        "WidgetBlueprintGeneratedClass /Game/UI/Screens/PlayerHUD/WBP_CrosshairManager.WBP_CrosshairManager_C": {
+            "label": "WBP_CrosshairManager_C"
+        },
+        "WidgetBlueprintGeneratedClass /Game/UI/Screens/PlayerHUD/WBP_InGameHUDWindow.WBP_InGameHUDWindow_C": {
+            "alignment": [
+                0.0,
+                0.0
+            ],
+            "autoAdjustUIWhenActive": 1,
+            "autoAdjustUIWhenActivePriority": "0",
+            "decouplePitchWhenActive": 1,
+            "decouplePitchWhenActivePriority": "0",
+            "handsWhenActive": 1,
+            "handsWhenActivePriority": "0",
+            "inputWhenActive": 1,
+            "inputWhenActivePriority": "0",
+            "label": "WBP_InGameHUDWindow_C",
+            "lockedUIWhenActive": 1,
+            "lockedUIWhenActivePriority": "0",
+            "remapWhenActive": 1,
+            "remapWhenActivePriority": "0",
+            "scale": [
+                1.0,
+                1.0
+            ],
+            "screen2DWhenActive": 1,
+            "screen2DWhenActivePriority": "0"
+        },
+        "WidgetBlueprintGeneratedClass /Game/UI/Screens/SBP_Cutscene.SBP_Cutscene_C": {
+            "alignment": [
+                0.0,
+                0.0
+            ],
+            "autoAdjustUIWhenActive": 1,
+            "autoAdjustUIWhenActivePriority": "0",
+            "decouplePitchWhenActive": 1,
+            "decouplePitchWhenActivePriority": "0",
+            "handsWhenActive": 3,
+            "handsWhenActivePriority": "0",
+            "inputWhenActive": 3,
+            "inputWhenActivePriority": "0",
+            "label": "SBP_Cutscene_C",
+            "lockedUIWhenActive": 1,
+            "lockedUIWhenActivePriority": "0",
+            "remapWhenActive": 1,
+            "remapWhenActivePriority": "0",
+            "scale": [
+                1.0,
+                1.0
+            ],
+            "screen2DWhenActive": 1,
+            "screen2DWhenActivePriority": "0"
+        },
+        "WidgetBlueprintGeneratedClass /Game/UI/Screens/SaveLoad/SBP_Load.SBP_Load_C": {
+            "label": "SBP_Load_C"
+        },
+        "WidgetBlueprintGeneratedClass /Game/UI/Screens/SaveLoad/SBP_Save.SBP_Save_C": {
+            "label": "SBP_Save_C"
+        },
+        "WidgetBlueprintGeneratedClass /Game/UI/Screens/Settings/SBP_Settings.SBP_Settings_C": {
+            "label": "SBP_Settings_C"
+        },
+        "WidgetBlueprintGeneratedClass /Game/UI/Widgets/Inventory/SBP_StackSizeSelector.SBP_StackSizeSelector_C": {
+            "label": "SBP_StackSizeSelector_C"
+        },
+        "WidgetBlueprintGeneratedClass /Game/UI/Widgets/Tutorials/WBP_TutorialPopup.WBP_TutorialPopup_C": {
+            "label": "WBP_TutorialPopup_C"
+        }
+    }
+}

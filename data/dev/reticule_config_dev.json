@@ -1,0 +1,49 @@
+{
+    "uevr_reticule_add_widget_use_button_override": false,
+    "uevr_reticule_delete_mesh_override": false,
+    "uevr_reticule_delete_widget_override": false,
+    "uevr_reticule_list": 2,
+    "uevr_reticule_material_finder_list": 35,
+    "uevr_reticule_material_finder_search_text": "",
+    "uevr_reticule_mesh_class": "StaticMesh /Engine/EngineMeshes/Sphere.Sphere",
+    "uevr_reticule_mesh_collisionChannel": 0,
+    "uevr_reticule_mesh_finder_list": 1,
+    "uevr_reticule_mesh_finder_search_text": "",
+    "uevr_reticule_mesh_id": "_default",
+    "uevr_reticule_mesh_ignorePawn": true,
+    "uevr_reticule_mesh_label": "Default",
+    "uevr_reticule_mesh_materialName": "Material /Game/Art/Debug/Debug_EditorTransparency_Green.Debug_EditorTransparency_Green",
+    "uevr_reticule_mesh_position_2d": [
+        0.0,
+        0.0
+    ],
+    "uevr_reticule_mesh_rotation": [
+        0.0,
+        0.0,
+        0.0
+    ],
+    "uevr_reticule_mesh_scale": [
+        0.00800000037997961,
+        0.00800000037997961,
+        0.00800000037997961
+    ],
+    "uevr_reticule_target_method": 3,
+    "uevr_reticule_widget_class": "WidgetBlueprintGeneratedClass /Game/UI/Screens/PlayerHUD/WBP_Crosshair.WBP_Crosshair_C",
+    "uevr_reticule_widget_collisionChannel": 0,
+    "uevr_reticule_widget_finder_list": 19,
+    "uevr_reticule_widget_finder_search_text": "",
+    "uevr_reticule_widget_id": "54f7cd79-ceaf-4876-ba76-b7921cba4d8a",
+    "uevr_reticule_widget_ignorePawn": true,
+    "uevr_reticule_widget_label": "Weapon Reticule",
+    "uevr_reticule_widget_minHitDistance": 10,
+    "uevr_reticule_widget_position_2d": [
+        0.0,
+        0.0
+    ],
+    "uevr_reticule_widget_removeFromViewport": true,
+    "uevr_reticule_widget_scale_2d": [
+        1.0,
+        1.0
+    ],
+    "uevr_reticule_widget_twoSided": true
+}

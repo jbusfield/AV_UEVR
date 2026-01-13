@@ -1,0 +1,70 @@
+{
+    "currentReticuleID": "_default",
+    "reticuleList": [
+        {
+            "class": "StaticMesh /Engine/EngineMeshes/Sphere.Sphere",
+            "id": "_default",
+            "label": "Default",
+            "options": {
+                "collisionChannel": 0,
+                "ignorePawn": true,
+                "materialName": "Material /Game/Art/Debug/Debug_EditorTransparency_Green.Debug_EditorTransparency_Green",
+                "position_2d": [
+                    0.0,
+                    0.0
+                ],
+                "scale": [
+                    0.008,
+                    0.008,
+                    0.008
+                ],
+                "scale_2d": [
+                    1.0,
+                    1.0
+                ]
+            },
+            "type": "Mesh"
+        },
+        {
+            "class": "WidgetBlueprintGeneratedClass /Game/UI/Screens/PlayerHUD/WBP_Crosshair.WBP_Crosshair_C",
+            "id": "54f7cd79-ceaf-4876-ba76-b7921cba4d8a",
+            "label": "Weapon Reticule",
+            "options": {
+                "collisionChannel": 0,
+                "ignorePawn": true,
+                "position_2d": [
+                    0.0,
+                    0.0
+                ],
+                "removeFromViewport": true,
+                "scale_2d": [
+                    1.0,
+                    1.0
+                ],
+                "twoSided": true
+            },
+            "type": "Widget"
+        },
+        {
+            "class": "WidgetBlueprintGeneratedClass /Game/UI/Screens/PlayerHUD/WBP_CrosshairManager.WBP_CrosshairManager_C",
+            "id": "9444d1eb-302d-4fee-aaab-1102573f9528",
+            "label": "Unarmed Reticule",
+            "options": {
+                "collisionChannel": 0,
+                "ignorePawn": true,
+                "position_2d": [
+                    0.0,
+                    0.0
+                ],
+                "removeFromViewport": true,
+                "scale_2d": [
+                    1.0,
+                    1.0
+                ],
+                "twoSided": true
+            },
+            "type": "Widget"
+        }
+    ],
+    "reticuleTargetMethod": 3
+}

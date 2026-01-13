@@ -1,0 +1,19 @@
+{
+    "enable_lumen": true,
+    "full_body_mode": false,
+    "tester": false,
+    "uevr_input_config_smoothTurnSpeed": 50,
+    "uevr_input_config_snapAngle": 45,
+    "uevr_input_config_useSnapTurn": true,
+    "uevr_reticule_hide": false,
+    "uevr_reticule_update_distance": 200,
+    "uevr_reticule_update_scale": 0.9919999837875366,
+    "uevr_ui_headLockedUI": false,
+    "uevr_ui_headLockedUIPosition": [
+        0.0,
+        -0.5,
+        2.3399999141693115
+    ],
+    "uevr_ui_headLockedUISize": 2.0,
+    "uevr_ui_reduceMotionSickness": true
+}

@@ -1,0 +1,35 @@
+{
+    "_profileLabels": {
+        "a157b936-682c-4fd0-8b34-7673c9cb14f5": "Full Body",
+        "default": "Default"
+    },
+    "_profileState": {
+        "currentEditingProfile": "default"
+    },
+    "a157b936-682c-4fd0-8b34-7673c9cb14f5": {
+        "armsAnimationMeshName": "Pawn.Mesh",
+        "armsMeshFOVFixID": "",
+        "armsMeshName": "Pawn.Mesh",
+        "bodyMeshFOVFixID": "",
+        "bodyMeshName": "Pawn.Mesh",
+        "hideAnimationArms": false,
+        "hidePawnArmsBones": false,
+        "hidePawnArmsMesh": false,
+        "hidePawnBodyMesh": false,
+        "pawnUpperArmLeft": "l_lowerArm_JNT",
+        "pawnUpperArmRight": "r_lowerArm_JNT"
+    },
+    "default": {
+        "armsAnimationMeshName": "Pawn.FirstPersonSkelMesh",
+        "armsMeshFOVFixID": "",
+        "armsMeshName": "Pawn.FirstPersonSkelMesh",
+        "bodyMeshFOVFixID": "",
+        "bodyMeshName": "Pawn.Mesh",
+        "hideAnimationArms": false,
+        "hidePawnArmsBones": true,
+        "hidePawnArmsMesh": false,
+        "hidePawnBodyMesh": false,
+        "pawnUpperArmLeft": "Root_NSK",
+        "pawnUpperArmRight": "Root_NSK"
+    }
+}

@@ -13,8 +13,6 @@ local ui = require('libs/ui')
 local remap = require('libs/remap')
 local gestures = require('libs/gestures')
 
---uevrUtils.setDeveloperMode(true)
-
 ui.init()
 montage.init()
 interaction.init()
@@ -27,7 +25,7 @@ input.init()
 
 attachments.allowChildVisibilityHandling(false)
 
-local versionTxt = "v1.0.0"
+local versionTxt = "v1.0.1"
 local title = "Avowed First Person Mod " .. versionTxt
 local configDefinition = {
 	{
@@ -36,19 +34,19 @@ local configDefinition = {
 		layout = spliceableInlineArray
 		{
 			{ widgetType = "text", id = "title", label = title },
-			{ widgetType = "indent", width = 20 }, { widgetType = "text", label = "Reticule" }, { widgetType = "begin_rect", },
-				expandArray(reticule.getConfigurationWidgets,{{id="uevr_reticule_update_distance", initialValue=200},}),
+			{ widgetType = "indent", width = 20 }, { widgetType = "text", label = "Input" }, { widgetType = "begin_rect", },
+				expandArray(input.getConfigurationWidgets),
 			{ widgetType = "end_rect", additionalSize = 12, rounding = 5 }, { widgetType = "unindent", width = 20 },
 			{ widgetType = "new_line" },
 			{ widgetType = "indent", width = 20 }, { widgetType = "text", label = "UI" }, { widgetType = "begin_rect", },
 				expandArray(ui.getConfigurationWidgets),
 			{ widgetType = "end_rect", additionalSize = 12, rounding = 5 }, { widgetType = "unindent", width = 20 },
 			{ widgetType = "new_line" },
-			{ widgetType = "indent", width = 20 }, { widgetType = "text", label = "Input" }, { widgetType = "begin_rect", },
-				expandArray(input.getConfigurationWidgets),
+			{ widgetType = "indent", width = 20 }, { widgetType = "text", label = "Reticule" }, { widgetType = "begin_rect", },
+				expandArray(reticule.getConfigurationWidgets,{{id="uevr_reticule_update_distance", initialValue=200},}),
 			{ widgetType = "end_rect", additionalSize = 12, rounding = 5 }, { widgetType = "unindent", width = 20 },
 			{ widgetType = "new_line" },
-			{ widgetType = "indent", width = 20 }, { widgetType = "text", label = "Control" }, { widgetType = "begin_rect", },
+			{ widgetType = "indent", width = 20 }, { widgetType = "text", label = "Options" }, { widgetType = "begin_rect", },
 				{
 					widgetType = "checkbox",
 					id = "full_body_mode",
@@ -103,20 +101,18 @@ configui.onCreateOrUpdate("enable_lumen", function(value)
 end)
 
 --some of the montages try to take over the camera which causes a flickering in the left eye.  This compensates for that behavior
-local yawMontages = {AM_UNI_1P_PullUp_32_In2Crouch = 1200, AM_1P_SingleDoor_Unbar = 3000, AM_1P_WallLever_Up = 3000, AM_1P_WallLever_Down = 3000, AM_UNI_1P_PushUp20_In2Crouch = 1000, AM_Uni_Container_Medium_Open = 3500, AM_Uni_DoubleDoor_Open_F = 1500, AM_Uni_DoubleDoor_Open_B = 1500, AM_1P_OpenSingleDoor_L = 1500, AM_1P_OpenSingleDoor_R = 1000,AM_Container_Large_Wide_Open = 4000, AM_Container_Large_Default_Open = 4000, AM_UNI_1P_Parkour_Mantle_120 = 700, AM_UNI_1P_Parkour_Mantle_315 = 1200, AM_UNI_1P_Parkour_Vault_200 = 1000, AM_UNI_1P_Parkour_Vault_300 = 1000}
+local yawMontages = {AM_1P_CloseSingleDoor_Push_R = 1000, AM_1P_CloseSingleDoor_Pull_R = 1000, AM_NPC_Ladder_Climb_Down_Intro = 1000,AM_UNI_1P_PullUp_32_In2Crouch = 1200, AM_1P_SingleDoor_Unbar = 3000, AM_1P_WallLever_Up = 3000, AM_1P_WallLever_Down = 3000, AM_UNI_1P_PushUp20_In2Crouch = 1000, AM_Uni_Container_Medium_Open = 3500, AM_Uni_DoubleDoor_Open_F = 1500, AM_Uni_DoubleDoor_Open_B = 1500, AM_1P_OpenSingleDoor_L = 1500, AM_1P_OpenSingleDoor_R = 1000,AM_Container_Large_Wide_Open = 4000, AM_Container_Large_Default_Open = 4000} -- AM_UNI_1P_Parkour_Mantle_120 = 700, AM_UNI_1P_Parkour_Mantle_315 = 1200, AM_UNI_1P_Parkour_Vault_200 = 1000, AM_UNI_1P_Parkour_Vault_300 = 1000}
 function on_montage_change(montageObject, montageName)
     if status["activeYawMontage"] ~= nil then
         delay(500, function()
             --dont disable the previous one if a new one has started
             if status["activeYawMontage"] == nil then
-                input.setPawnRotationMode(isFullBodyMode() and input.PawnRotationMode.SIMPLE or input.PawnRotationMode.LOCKED)
-                input.setOptimizeBodyYawCalculations(true)
+                input.setDisabled(false)
             end
         end)
         status["activeYawMontage"] = nil
     elseif yawMontages[montageName] ~= nil then
-        input.setPawnRotationMode(input.PawnRotationMode.RIGHT_CONTROLLER) --dont allow montage body changes to affect head rotation
-        input.setOptimizeBodyYawCalculations(false) --dont let the right controller affect head rotation
+        input.setDisabled(true)
         status["activeYawMontage"] = montageName
     end
 end
@@ -124,7 +120,8 @@ end
 local function onIsClimbingLadderChange(isClimbing)
     if isClimbing then
         if isFullBodyMode() then
-            input.setPawnRotationMode(input.PawnRotationMode.GAME)
+            status["ladderPawnRotationMode"] = input.getPawnRotationMode()
+            input.setPawnRotationMode(input.PawnRotationMode.NONE)
             input.setOptimizeBodyYawCalculations(false)
         else
             input.setDisabled(true)
@@ -132,8 +129,9 @@ local function onIsClimbingLadderChange(isClimbing)
     else
         delay(500, function()
             if isFullBodyMode() then
-                input.setPawnRotationMode(isFullBodyMode() and input.PawnRotationMode.SIMPLE or input.PawnRotationMode.LOCKED)
+                input.setPawnRotationMode(status["ladderPawnRotationMode"])
                 input.setOptimizeBodyYawCalculations(true)
+                status["ladderPawnRotationMode"] = nil
             else
                 input.setDisabled(false)
             end
@@ -254,9 +252,14 @@ local function getWeaponMesh(slot)
     return weapon and weapon:GetBaseMesh(), weapon
 end
 
-
 attachments.registerOnGripUpdateCallback(function()
+    status["currentWeaponRight"] = nil
+    status["currentWeaponLeft"] = nil
+    status["currentWeaponActorRight"] = nil
+    status["currentWeaponActorLeft"] = nil
+
     if uevrUtils.isInCutscene() then return end
+    --if not allowWeapon then return end
 
     local currentWeaponRight, currentWeaponActorRight = getWeaponMesh("EquipSlot.RightHand")
     local currentWeaponLeft, currentWeaponActorLeft = getWeaponMesh("EquipSlot.LeftHand")
@@ -281,10 +284,8 @@ attachments.registerOnGripUpdateCallback(function()
 local function setDefaultTargeting(handed, offset)
 	if handed == Handed.Left then
 		input.setAimMethod(input.AimMethod.LEFT_CONTROLLER)
-		reticule.setTargetMethod(reticule.ReticuleTargetMethod.LEFT_CONTROLLER)
 	else
 		input.setAimMethod(input.AimMethod.RIGHT_CONTROLLER)
-		reticule.setTargetMethod(reticule.ReticuleTargetMethod.RIGHT_CONTROLLER)
 	end
 end
 
@@ -292,8 +293,6 @@ local function setMeleeOffset(hand)
     local offset = attachments.getActiveAttachmentMeleeRotationOffset(hand)
     if offset then
         input.setAimRotationOffset(offset)
-        --if you use controller based reticule targetting the set this as well
-        reticule.setTargetRotationOffset(offset)
         uevrUtils.updateDeferral("melee_attack")
     end
 end
@@ -301,7 +300,6 @@ end
 --won't callback unless an updateDeferral hasnt been called in the last 1000ms
 uevrUtils.createDeferral("melee_attack", 1000, function()
     input.setAimRotationOffset({Pitch=0, Yaw=0, Roll=0})
-    reticule.setTargetRotationOffset()
 end)
 
 local function getNiagaraChildren(parent)
@@ -324,7 +322,9 @@ local currentNiagaraChildren = {}
 setInterval(100, function()
     local meshName = isFullBodyMode() and "Mesh" or "FirstPersonSkelMesh"
     local niagaraChildren = getNiagaraChildren(uevrUtils.getValid(pawn,{meshName}))
-    --print("Found " .. #niagaraChildren .. " niagara children attached to hand mesh.")
+    if #niagaraChildren > 0 then
+        print("Found " .. #niagaraChildren .. " niagara children attached to hand mesh.")
+    end
     --add any new niagara components to attachments and remove any that existed before but are now gone
     for i, child in ipairs(niagaraChildren) do
         local found = false
@@ -336,7 +336,13 @@ setInterval(100, function()
         end
         if not found then
             setDefaultTargeting(Handed.Right) --grimoire spells fire from the right hand
-            attachments.attachToMesh(child, controllers.getController(Handed.Right))
+            if child.AttachSocketName:to_string() == "l_weapon_NSKSocket" or child.AttachSocketName:to_string() == "hand_lSocket" then
+                print("Attaching niagara component to left controller: " .. child:get_full_name(), child.AttachSocketName)
+                attachments.attachToMesh(child, controllers.getController(Handed.Left))
+            else
+                print("Attaching new niagara component to right controller: " .. child:get_full_name(), child.AttachSocketName)
+                attachments.attachToMesh(child, controllers.getController(Handed.Right))
+            end
         end
     end
     currentNiagaraChildren = niagaraChildren
@@ -344,7 +350,7 @@ end)
 
 
 setInterval(1000, function()
-    --check if the pawns hands mesh and if so, destroy our so they will regenrate with the new mesh
+    --check if the pawns hands mesh has changed and if so, destroy ours so they will regenrate with the new mesh
     local meshName = isFullBodyMode() and "Mesh" or "FirstPersonSkelMesh"
     local newHandMesh = getChildFromSkeletalMeshName(uevrUtils.getValid(pawn,{meshName}), "GLOVES")
     if status["currentHandMesh"] ~= newHandMesh then
@@ -398,8 +404,32 @@ local function handleFullBody()
     end
 end
 
-function on_cutscene_change(value)
+local function resetTransform(component)
+    --print("Resetting transform for component: " .. component:get_full_name())
+    delay(300,function()
+        --print("Applying reset transform for component: " .. component:get_full_name())     
+        if uevrUtils.getValid(component) ~= nil and component.AttachParent ~= nil then
+            component = component.AttachParent
+            uevrUtils.set_component_relative_location(component, uevrUtils.vector(0,0,0))
+            uevrUtils.set_component_relative_rotation(component, uevrUtils.rotator(0,0,0))
+            uevrUtils.set_component_relative_scale(component, uevrUtils.vector(1,1,1))
+        end
+    end)
+end
+function on_cutscene_change(isInCinematic)
     handleFullBody()
+
+    --normally when attachments detach they reset their transform, but during cinematics there is
+    --some disconnect because the weapons parant is changing during the transition (from hand to holstered). 
+    --Using a short delay we reset the new parent's transforms so that the weapon displays correctly during the cinematic
+    if isInCinematic then
+        if status["currentWeaponRight"] ~= nil then
+            resetTransform(status["currentWeaponRight"])
+        end
+        if status["currentWeaponLeft"] ~= nil then
+            resetTransform(status["currentWeaponLeft"])
+        end
+    end
 end
 
 attachments.registerAttachmentChangeCallback(function(id, hand, attachment)
